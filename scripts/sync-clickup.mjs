@@ -70,30 +70,22 @@ async function main() {
   }
 
   const uniqueLists = [...new Map(allLists.map(l => [String(l.id), l])).values()];
-  const tasks = [];
-
-  for (const list of uniqueLists) {
-    try {
-      const rows = await paged(`/list/${list.id}/task`, "tasks", {
-        archived:false, subtasks:false, include_closed:true, include_timl:false, order_by:"updated", reverse:true
-      });
-      for (const t of rows) {
-        tasks.push({
-          id:t.id, name:t.name, status:t.status?.status || "Unknown",
-          status_type:t.status?.type || null,
-          assignees:(t.assignees||[]).map(a => ({id:a.id, username:a.username, name:a.display_name || a.username})),
-          priority:t.priority ? {id:t.priority.id, name:t.priority.priority} : null,
-          due_date:t.due_date || null, start_date:t.start_date || null,
-          date_created:t.date_created || null, date_updated:t.date_updated || null,
-          date_done:t.date_done || null, parent:t.parent || null,
-          url:t.url || null, points:t.points ?? null, time_estimate:t.time_estimate || null,
-          list_id:list.id, list_name:list.name, space_id:list.space_id,
-          space_name:list.space_name, folder_id:list.folder_id, folder_name:list.folder_name
-        });
-      }
-    } catch (e) { errors.push(`List ${list.id} ${list.name}: ${e}`); }
-  }
-
+  const rawTasks = await paged(`/team/${TEAM}/task`, "tasks", {
+    subtasks:false, include_closed:true, order_by:"updated", reverse:true
+  });
+  const tasks = rawTasks.map(t => ({
+    id:t.id, name:t.name, status:t.status?.status || "Unknown",
+    status_type:t.status?.type || null,
+    assignees:(t.assignees||[]).map(a => ({id:a.id, username:a.username, name:a.display_name || a.username})),
+    priority:t.priority ? {id:t.priority.id, name:t.priority.priority} : null,
+    due_date:t.due_date || null, start_date:t.start_date || null,
+    date_created:t.date_created || null, date_updated:t.date_updated || null,
+    date_done:t.date_done || null, parent:t.parent || null,
+    url:t.url || null, points:t.points ?? null, time_estimate:t.time_estimate || null,
+    list_id:t.list?.id || null, list_name:t.list?.name || "Unknown",
+    space_id:t.space?.id || null, space_name:t.space?.name || "Unknown",
+    folder_id:t.folder?.id || null, folder_name:t.folder?.name || null
+  }));
   const open = tasks.filter(t => !["closed","done"].includes(String(t.status_type).toLowerCase()));
   const now = Date.now();
   for (const t of open) {
