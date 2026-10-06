@@ -1,63 +1,130 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Deepen PM Hub</title>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deepen PM Hub</title>
 <style>
-:root{--bg:#07101d;--panel:#0e1929;--panel2:#121f33;--line:#24344e;--text:#edf4ff;--muted:#91a3bd;--blue:#69a8ff;--green:#43d39e;--red:#ff6b7a;--amber:#ffc857}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}aside{position:fixed;left:0;top:0;bottom:0;width:238px;background:#06101b;border-right:1px solid var(--line);padding:22px 15px;z-index:5}main{margin-left:238px;padding:25px;max-width:1700px}.brand{font-size:21px;font-weight:800;margin:0 8px 25px}.brand span{color:var(--blue)}nav button{width:100%;border:0;background:transparent;color:var(--muted);padding:11px 12px;margin:3px 0;border-radius:9px;text-align:left;font-size:14px;cursor:pointer}nav button:hover,nav button.active{background:#14243a;color:#fff}.bottom{position:absolute;left:18px;right:18px;bottom:18px}.langs{display:flex;gap:5px}.langs button{width:auto;flex:1;text-align:center;padding:7px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.title h1{margin:0 0 5px;font-size:28px}.muted{color:var(--muted);font-size:13px}.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:99px;background:#172740;color:#b9c9df;font-size:11px}.live{background:#103528;color:#63e0ad}.demo{background:#3b2d12;color:#ffd77a}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.grid2{grid-template-columns:1.4fr 1fr}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px;overflow:hidden}.card h2{font-size:16px;margin:0 0 14px}.kpi{font-size:30px;font-weight:800;margin-top:6px}.delta{font-size:11px;color:var(--muted)}.bar{height:8px;background:#223149;border-radius:8px;overflow:hidden;margin:7px 0 11px}.bar i{display:block;height:100%;background:var(--blue)}.row{display:flex;justify-content:space-between;gap:12px;margin:8px 0;font-size:13px}.risk{border-left:3px solid var(--red);padding:8px 0 8px 12px;margin:10px 0}.warn{border-left:3px solid var(--amber);padding:8px 0 8px 12px;margin:10px 0}.good{border-left:3px solid var(--green);padding:8px 0 8px 12px;margin:10px 0}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.toolbar select,.toolbar input{background:#0a1525;border:1px solid var(--line);color:#fff;border-radius:8px;padding:9px}.toolbar input{min-width:240px}.tablewrap{overflow:auto;max-height:650px}table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:9px 8px;border-bottom:1px solid #1e2c43;text-align:left;white-space:nowrap}th{color:var(--muted);position:sticky;top:0;background:var(--panel);z-index:1}.status{display:inline-block;padding:4px 7px;border-radius:6px;background:#1a2941}.status.done{background:#123528;color:#72e4b2}.status.bad{background:#3a1820;color:#ff9aa5}.status.warn{background:#3a2b13;color:#ffd477}.link{color:var(--blue);text-decoration:none}.empty{text-align:center;padding:35px;color:var(--muted)}.footer{margin-top:18px;color:#657892;font-size:11px}.mini{font-size:11px;color:var(--muted)}@media(max-width:900px){aside{position:static;width:auto;height:auto}.bottom{position:static;margin-top:15px}main{margin:0}.grid,.grid2{grid-template-columns:1fr 1fr}}@media(max-width:600px){main{padding:15px}.grid,.grid2{grid-template-columns:1fr}.title h1{font-size:23px}}
-</style></head>
-<body><aside><div class="brand">Deepen <span>PM Hub</span></div><nav id="nav"></nav><div class="bottom"><div class="mini" id="source">Loading...</div><div class="langs"><button onclick="setLang('uz')">UZ</button><button onclick="setLang('ru')">RU</button><button onclick="setLang('en')">EN</button></div></div></aside>
-<main><div class="top"><div class="title"><h1 id="title"></h1><div class="muted" id="subtitle"></div></div><div id="badge"></div></div><div id="app"></div><div class="footer" id="method"></div></main>
+:root{--bg:#07101d;--panel:#0e1929;--line:#24344e;--text:#edf4ff;--muted:#91a3bd;--blue:#69a8ff;--green:#43d39e;--red:#ff6b7a;--amber:#ffc857}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+aside{position:fixed;inset:0 auto 0 0;width:238px;background:#06101b;border-right:1px solid var(--line);padding:22px 15px;z-index:10}
+.brand{font-size:21px;font-weight:800;margin:0 8px 25px}.brand span{color:var(--blue)}
+nav button,.langs button{border:0;color:var(--muted);background:transparent;border-radius:9px;cursor:pointer}
+nav button{display:block;width:100%;padding:11px 12px;margin:3px 0;text-align:left;font-size:14px}
+nav button:hover,nav button.active{background:#14243a;color:#fff}
+.bottom{position:absolute;left:18px;right:18px;bottom:18px}.langs{display:flex;gap:5px;margin-top:8px}.langs button{flex:1;padding:7px;border:1px solid var(--line)}.langs button.active{background:#14243a;color:#fff}
+main{margin-left:238px;padding:25px;max-width:1700px}.top{display:flex;justify-content:space-between;gap:15px}.title h1{margin:0 0 5px;font-size:28px}.muted,.mini{color:var(--muted);font-size:13px}.mini{font-size:11px}
+.pill{display:inline-block;padding:5px 9px;border-radius:99px;font-size:11px}.live{background:#103528;color:#63e0ad}.demo{background:#3b2d12;color:#ffd77a}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.grid2{grid-template-columns:1.4fr 1fr}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px;overflow:hidden}.card h2{font-size:16px;margin:0 0 14px}.kpi{font-size:30px;font-weight:800;margin-top:6px}
+.row{display:flex;justify-content:space-between;gap:12px;margin:8px 0}.bar{height:8px;background:#223149;border-radius:8px;overflow:hidden;margin:7px 0 11px}.bar i{display:block;height:100%;background:var(--blue)}
+.risk{border-left:3px solid var(--red);padding:8px 0 8px 12px;margin:10px 0}.warn{border-left:3px solid var(--amber);padding:8px 0 8px 12px;margin:10px 0}.good{border-left:3px solid var(--green);padding:8px 0 8px 12px;margin:10px 0}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.toolbar select,.toolbar input{background:#0a1525;border:1px solid var(--line);color:#fff;border-radius:8px;padding:9px}.toolbar input{min-width:240px}
+.tablewrap{overflow:auto;max-height:650px}table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:9px 8px;border-bottom:1px solid #1e2c43;text-align:left;white-space:nowrap}th{color:var(--muted);position:sticky;top:0;background:var(--panel)}
+.status{display:inline-block;padding:4px 7px;border-radius:6px;background:#1a2941}.done{background:#123528;color:#72e4b2}.bad{background:#3a1820;color:#ff9aa5}.stwarn{background:#3a2b13;color:#ffd477}.link{color:var(--blue);text-decoration:none}.empty{text-align:center;padding:35px;color:var(--muted)}
+.footer{margin-top:18px;color:#657892;font-size:11px}
+@media(max-width:900px){aside{position:static;width:auto}.bottom{position:static;margin-top:15px}main{margin:0}.grid,.grid2{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid,.grid2{grid-template-columns:1fr}.title h1{font-size:23px}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="brand">Deepen <span>PM Hub</span></div>
+  <nav id="nav"></nav>
+  <div class="bottom">
+    <div class="mini" id="source">Loading data...</div>
+    <div class="langs">
+      <button type="button" data-lang="uz">UZ</button>
+      <button type="button" data-lang="ru">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</aside>
+<main>
+  <div class="top"><div><div class="title"><h1 id="title">PM Dashboard</h1><div class="muted" id="subtitle">Deepen ERP va Deepen Well</div></div></div><div id="badge"></div></div>
+  <div id="app"></div>
+  <div class="footer" id="method"></div>
+</main>
 <script>
-let D={generated_at:null,source:"demo",tasks:[],lists:[],errors:[]}, page="overview", lang="uz";
-try{lang=window.localStorage.getItem("dph-lang")||"uz"}catch(e){lang="uz"}
-window.__DPMH_BOOT_ERROR__=null;
-const T={
-uz:{overview:"Umumiy holat",erp:"Deepen ERP",well:"Deepen Well",team:"Jamoa",risks:"Risklar va bottlenecklar",history:"Sprint tarixi",tasks:"Task Explorer",title:"PM Dashboard",sub:"Deepen ERP va Deepen Well uchun boshqaruv markazi",primary:"Primary Tasks",active:"Faol",done:"Bajarilgan",overdue:"Muddati o'tgan",stale:"7+ kun yangilanmagan",backlog:"Backlog",inprogress:"Jarayonda",alerts:"Avtomatik kuzatuv",status:"Status",task:"Task",assignee:"Ijrochi",product:"Product",list:"List",updated:"Yangilangan",due:"Deadline",search:"Qidirish...",all:"Barchasi",potential:"Potential bottleneck",signal:"Queue signali. Faqat task soni bottleneck ekanini isbotlamaydi.",method:"Metodologiya: Sprint KPI faqat Primary/Parent Tasks hisobida. Subtasklar alohida hisoblanmaydi.",live:"LIVE · ClickUp",demo:"DEMO · ClickUp token kerak",last:"Oxirgi sync",no:"Ma'lumot topilmadi",actions:"PM Actions",review:"Ko'rib chiqish",current:"Joriy sprintlar",distribution:"Status taqsimoti",workload:"Workload",sprintHistory:"Sprint History",source:"Manba",allTasks:"Barcha Primary Tasks",staleMsg:"Task 7 kundan ortiq yangilanmagan.",overdueMsg:"Deadline o'tgan ochiq task.",filter:"Filter",clear:"Tozalash",open:"Ochish"},
-ru:{overview:"Общий обзор",erp:"Deepen ERP",well:"Deepen Well",team:"Команда",risks:"Риски и bottleneck",history:"История спринтов",tasks:"Task Explorer",title:"PM Dashboard",sub:"Центр управления Deepen ERP и Deepen Well",primary:"Primary Tasks",active:"Активные",done:"Выполнено",overdue:"Просрочено",stale:"Не обновлялись 7+ дней",backlog:"Backlog",inprogress:"В работе",alerts:"Автоматический контроль",status:"Статус",task:"Задача",assignee:"Исполнитель",product:"Product",list:"List",updated:"Обновлено",due:"Deadline",search:"Поиск...",all:"Все",potential:"Potential bottleneck",signal:"Сигнал очереди. Само количество задач не доказывает bottleneck.",method:"Методология: KPI спринта считает только Primary/Parent Tasks. Subtasks отдельно не считаются.",live:"LIVE · ClickUp",demo:"DEMO · нужен ClickUp token",last:"Последняя синхронизация",no:"Данные не найдены",actions:"Действия PM",review:"Проверить",current:"Текущие спринты",distribution:"Распределение по статусам",workload:"Workload",sprintHistory:"Sprint History",source:"Источник",allTasks:"Все Primary Tasks",staleMsg:"Задача не обновлялась более 7 дней.",overdueMsg:"Открытая задача с истёкшим deadline.",filter:"Фильтр",clear:"Очистить",open:"Открыть"},
-en:{overview:"Overview",erp:"Deepen ERP",well:"Deepen Well",team:"Team",risks:"Risks & Bottlenecks",history:"Sprint History",tasks:"Task Explorer",title:"PM Dashboard",sub:"Control center for Deepen ERP and Deepen Well",primary:"Primary Tasks",active:"Active",done:"Completed",overdue:"Overdue",stale:"Not updated for 7+ days",backlog:"Backlog",inprogress:"In Progress",alerts:"Automated monitoring",status:"Status",task:"Task",assignee:"Assignee",product:"Product",list:"List",updated:"Updated",due:"Deadline",search:"Search...",all:"All",potential:"Potential bottleneck",signal:"Queue signal. Task count alone does not prove a bottleneck.",method:"Methodology: Sprint KPI counts Primary/Parent Tasks only. Subtasks are not counted separately.",live:"LIVE · ClickUp",demo:"DEMO · ClickUp token required",last:"Last sync",no:"No data found",actions:"PM Actions",review:"Review",current:"Current sprints",distribution:"Status distribution",workload:"Workload",sprintHistory:"Sprint History",source:"Source",allTasks:"All Primary Tasks",staleMsg:"Task has not been updated for more than 7 days.",overdueMsg:"Open task past deadline.",filter:"Filter",clear:"Clear",open:"Open"}
+(function(){
+'use strict';
+
+var D={generated_at:null,source:'demo',tasks:[],lists:[],errors:[]};
+var page='overview';
+var lang='uz';
+
+try{lang=localStorage.getItem('dph-lang')||'uz';}catch(e){lang='uz';}
+
+var T={
+uz:{overview:'Umumiy holat',erp:'Deepen ERP',well:'Deepen Well',team:'Jamoa',risks:'Risklar va bottlenecklar',history:'Sprint tarixi',tasks:'Task Explorer',title:'PM Dashboard',sub:'Deepen ERP va Deepen Well uchun boshqaruv markazi',primary:'Primary Tasks',active:'Faol',done:'Bajarilgan',overdue:"Muddati o'tgan",stale:'7+ kun yangilanmagan',backlog:'Backlog',inprogress:'Jarayonda',alerts:'Avtomatik kuzatuv',status:'Status',task:'Task',assignee:'Ijrochi',product:'Product',list:'List',updated:'Yangilangan',due:'Deadline',search:'Qidirish...',all:'Barchasi',potential:'Potential bottleneck',signal:'Queue signali. Task soni yolg‘iz bottleneckni isbotlamaydi.',method:'Metodologiya: Sprint KPI faqat Primary/Parent Tasks hisobida. Subtasklar alohida hisoblanmaydi.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token kerak',last:'Oxirgi sync',no:'Ma’lumot topilmadi',actions:'PM Actions',review:'Ko‘rib chiqish',current:'Joriy sprintlar',distribution:'Status taqsimoti',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Barcha Primary Tasks',staleMsg:'Task 7 kundan ortiq yangilanmagan.',overdueMsg:"Deadline o'tgan ochiq task."},
+ru:{overview:'Общий обзор',erp:'Deepen ERP',well:'Deepen Well',team:'Команда',risks:'Риски и bottleneck',history:'История спринтов',tasks:'Task Explorer',title:'PM Dashboard',sub:'Центр управления Deepen ERP и Deepen Well',primary:'Primary Tasks',active:'Активные',done:'Выполнено',overdue:'Просрочено',stale:'Не обновлялись 7+ дней',backlog:'Backlog',inprogress:'В работе',alerts:'Автоматический контроль',status:'Статус',task:'Задача',assignee:'Исполнитель',product:'Product',list:'List',updated:'Обновлено',due:'Deadline',search:'Поиск...',all:'Все',potential:'Potential bottleneck',signal:'Сигнал очереди. Само количество задач не доказывает bottleneck.',method:'Методология: KPI спринта считает только Primary/Parent Tasks. Subtasks отдельно не считаются.',live:'LIVE · ClickUp',demo:'DEMO · нужен ClickUp token',last:'Последняя синхронизация',no:'Данные не найдены',actions:'Действия PM',review:'Проверить',current:'Текущие спринты',distribution:'Распределение по статусам',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Все Primary Tasks',staleMsg:'Задача не обновлялась более 7 дней.',overdueMsg:'Открытая задача с истёкшим deadline.'},
+en:{overview:'Overview',erp:'Deepen ERP',well:'Deepen Well',team:'Team',risks:'Risks & Bottlenecks',history:'Sprint History',tasks:'Task Explorer',title:'PM Dashboard',sub:'Control center for Deepen ERP and Deepen Well',primary:'Primary Tasks',active:'Active',done:'Completed',overdue:'Overdue',stale:'Not updated for 7+ days',backlog:'Backlog',inprogress:'In Progress',alerts:'Automated monitoring',status:'Status',task:'Task',assignee:'Assignee',product:'Product',list:'List',updated:'Updated',due:'Deadline',search:'Search...',all:'All',potential:'Potential bottleneck',signal:'Queue signal. Task count alone does not prove a bottleneck.',method:'Methodology: Sprint KPI counts Primary/Parent Tasks only. Subtasks are not counted separately.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token required',last:'Last sync',no:'No data found',actions:'PM Actions',review:'Review',current:'Current sprints',distribution:'Status distribution',workload:'Workload',sprintHistory:'Sprint History',allTasks:'All Primary Tasks',staleMsg:'Task has not been updated for more than 7 days.',overdueMsg:'Open task past deadline.'}
 };
-function t(k){return T[lang][k]||k}
-function esc(s){return String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]))}
-function closed(x){return ["closed","done"].includes(String(x.status_type||"").toLowerCase())||/^(complete|completed|done|closed)$/i.test(x.status||"")}
-function product(x){let s=(x.list_name+" "+(x.folder_name||"")+" "+(x.space_name||"")).toLowerCase();if(/erp|white.?label|whitelabel/.test(s))return"Deepen ERP";if(/deepen|well|ai trainer|deepview|activity|challenge/.test(s))return"Deepen Well";return"Other"}
-function all(){return D.tasks||[]}
-function active(){return all().filter(x=>!closed(x))}
-function nav(){document.getElementById("nav").innerHTML=[["overview","◉ "+t("overview")],["erp","▣ "+t("erp")],["well","◈ "+t("well")],["team","♙ "+t("team")],["risks","⚠ "+t("risks")],["history","◷ "+t("history")],["tasks","☷ "+t("tasks")]].map(([p,n])=>`<button class="${page===p?"active":""}" onclick="show('${p}')">${n}</button>`).join("")}
-function top(){document.getElementById("title").textContent=t("title");document.getElementById("subtitle").textContent=t("sub");document.getElementById("badge").innerHTML=`<span class="pill ${D.source==="clickup"?"live":"demo"}">${D.source==="clickup"?t("live"):t("demo")}</span>`;document.getElementById("source").textContent=`${t("last")}: ${D.generated_at?new Date(D.generated_at).toLocaleString():"—"}`;document.getElementById("method").textContent=t("method")}
-function card(label,num,sub=""){return`<div class="card"><div class="muted">${label}</div><div class="kpi">${num}</div><div class="delta">${sub}</div></div>`}
-function statusCounts(xs){let m={};xs.forEach(x=>m[x.status]=(m[x.status]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])}
-function bars(xs){let z=statusCounts(xs), total=xs.length||1;return z.slice(0,12).map(([s,n])=>`<div class="row"><span>${esc(s)}</span><b>${n}</b></div><div class="bar"><i style="width:${n/total*100}%"></i></div>`).join("")||`<div class="empty">${t("no")}</div>`}
-function sprintLists(){return D.lists.filter(l=>/sprint\s*\d+/i.test(l.name||"")).sort((a,b)=>String(b.name).localeCompare(String(a.name),undefined,{numeric:true}))}
-function overview(){let a=active(), done=all().filter(closed), overdue=a.filter(x=>x.overdue), stale=a.filter(x=>(x.age_days||0)>=7), bp=a.filter(x=>/backlog|to do/i.test(x.status));let sprint=sprintLists().slice(0,8);let q=statusCounts(a).filter(([s])=>!/(backlog|to do|complete|done|closed)/i.test(s)&&a.filter(x=>x.status===s).length>=Math.max(3,Math.ceil(a.length*.12)));document.getElementById("app").innerHTML=`<div class="grid">${card(t("primary"),all().length,t("allTasks"))}${card(t("active"),a.length)}${card(t("done"),done.length)}${card(t("overdue"),overdue.length,t("overdue"))}</div><div class="grid">${card(t("stale"),stale.length,t("stale"))}${card(t("backlog"),bp.length)}${card(t("inprogress"),a.filter(x=>/progress|review|qa|design|release/i.test(x.status)).length)}${card(t("alerts"),overdue.length+stale.length)}</div><div class="grid grid2"><div class="card"><h2>${t("current")}</h2>${sprint.map(l=>{let xs=all().filter(x=>String(x.list_id)===String(l.id));return`<div class="row"><span>${esc(l.name)}</span><b>${xs.length}</b></div>`}).join("")||`<div class="empty">${t("no")}</div>`}</div><div class="card"><h2>${t("distribution")}</h2>${bars(a)}</div></div><div class="grid grid2"><div class="card"><h2>${t("risks")}</h2>${overdue.slice(0,5).map(x=>`<div class="risk"><b>${esc(x.name)}</b><div class="muted">${t("overdueMsg")}</div></div>`).join("")}${stale.slice(0,5).map(x=>`<div class="warn"><b>${esc(x.name)}</b><div class="muted">${t("staleMsg")}</div></div>`).join("")}${q.slice(0,5).map(([s,n])=>`<div class="warn"><b>${t("potential")}: ${esc(s)} · ${n}</b><div class="muted">${t("signal")}</div></div>`).join("")||(!overdue.length&&!stale.length?'<div class="good">No critical automatic alerts.</div>':"")}</div><div class="card"><h2>${t("actions")}</h2><div class="good">1. ${t("review")}: ${overdue.length} overdue task(s).</div><div class="warn">2. ${t("review")}: ${stale.length} stale task(s).</div><div class="warn">3. ${t("review")}: ${q.length} potential queue signal(s).</div><div class="mini" style="margin-top:15px">${t("method")}</div></div></div>`}
-function productPage(p){let xs=all().filter(x=>product(x)===p), a=xs.filter(x=>!closed(x));document.getElementById("app").innerHTML=`<div class="grid">${card(t("primary"),xs.length)}${card(t("active"),a.length)}${card(t("done"),xs.length-a.length)}${card(t("overdue"),a.filter(x=>x.overdue).length)}</div><div class="grid grid2"><div class="card"><h2>${t("distribution")}</h2>${bars(a)}</div><div class="card"><h2>${t("list")}</h2>${statusCounts(a).map(([s,n])=>`<div class="row"><span>${esc(s)}</span><b>${n}</b></div>`).join("")}</div></div><div class="card"><h2>${t("allTasks")}</h2>${table(xs.slice(0,500))}</div>`}
-function team(){let m={};active().forEach(x=>(x.assignees||[]).forEach(a=>{let n=a.name||a.username||"Unassigned";m[n]=(m[n]||0)+1}));let rows=Object.entries(m).sort((a,b)=>b[1]-a[1]);document.getElementById("app").innerHTML=`<div class="card"><h2>${t("workload")}</h2><div class="mini">Workload is not a performance score.</div><div class="tablewrap"><table><tr><th>${t("assignee")}</th><th>${t("active")}</th><th>${t("overdue")}</th></tr>${rows.map(([n,c])=>{let q=active().filter(x=>(x.assignees||[]).some(a=>(a.name||a.username)===n)&&x.overdue).length;return`<tr><td>${esc(n)}</td><td>${c}</td><td>${q}</td></tr>`}).join("")}</table></div></div>`}
-function risks(){let a=active(), overdue=a.filter(x=>x.overdue), stale=a.filter(x=>(x.age_days||0)>=7);document.getElementById("app").innerHTML=`<div class="grid">${card(t("overdue"),overdue.length)}${card(t("stale"),stale.length)}${card(t("backlog"),a.filter(x=>/backlog/i.test(x.status)).length)}${card(t("inprogress"),a.filter(x=>/progress|review|qa|design|release/i.test(x.status)).length)}</div><div class="card"><h2>${t("risks")}</h2>${overdue.map(x=>`<div class="risk"><b>${esc(x.name)}</b><div class="muted">${esc(x.list_name)} · ${t("overdueMsg")}</div></div>`).join("")}${stale.map(x=>`<div class="warn"><b>${esc(x.name)}</b><div class="muted">${esc(x.list_name)} · ${t("staleMsg")}</div></div>`).join("")}${!overdue.length&&!stale.length?'<div class="good">No automatic risk alerts.</div>':""}</div>`}
-function history(){let rows=sprintLists();document.getElementById("app").innerHTML=`<div class="card"><h2>${t("sprintHistory")}</h2><div class="tablewrap"><table><tr><th>${t("list")}</th><th>${t("primary")}</th><th>${t("done")}</th><th>${t("active")}</th></tr>${rows.map(l=>{let xs=all().filter(x=>String(x.list_id)===String(l.id));let d=xs.filter(closed).length;return`<tr><td>${esc(l.name)}</td><td>${xs.length}</td><td>${d}</td><td>${xs.length-d}</td></tr>`}).join("")}</table></div><p class="mini">${t("method")}</p></div>`}
-function table(xs){return`<div class="tablewrap"><table><tr><th>${t("task")}</th><th>${t("status")}</th><th>${t("assignee")}</th><th>${t("product")}</th><th>${t("list")}</th><th>${t("updated")}</th><th>${t("due")}</th></tr>${xs.map(x=>`<tr><td>${x.url?`<a class="link" target="_blank" href="${x.url}">${esc(x.name)}</a>`:esc(x.name)}</td><td><span class="status ${closed(x)?"done":x.overdue?"bad":(x.age_days||0)>=7?"warn":""}">${esc(x.status)}</span></td><td>${esc((x.assignees||[]).map(a=>a.name||a.username).join(", ")||"—")}</td><td>${product(x)}</td><td>${esc(x.list_name)}</td><td>${x.date_updated?new Date(Number(x.date_updated)).toLocaleDateString():"—"}</td><td>${x.due_date?new Date(Number(x.due_date)).toLocaleDateString():"—"}</td></tr>`).join("")}</table></div>`}
-function tasks(){let xs=all();document.getElementById("app").innerHTML=`<div class="card"><h2>${t("allTasks")}</h2><div class="toolbar"><input id="search" placeholder="${t("search")}" oninput="filterTasks()"><select id="pf" onchange="filterTasks()"><option value="">${t("all")}</option><option>Deepen ERP</option><option>Deepen Well</option><option>Other</option></select><select id="sf" onchange="filterTasks()"><option value="">${t("all")}</option>${[...new Set(xs.map(x=>x.status))].sort().map(s=>`<option>${esc(s)}</option>`).join("")}</select></div><div id="tasktable">${table(xs.slice(0,1000))}</div><div class="mini">${xs.length} primary tasks loaded.</div></div>`}
-function filterTasks(){let q=(document.getElementById("search").value||"").toLowerCase(),p=document.getElementById("pf").value,s=document.getElementById("sf").value;let xs=all().filter(x=>(!q||JSON.stringify(x).toLowerCase().includes(q))&&(!p||product(x)===p)&&(!s||x.status===s));document.getElementById("tasktable").innerHTML=table(xs.slice(0,1000))}
-function render(){nav();top();if(page==="overview")overview();else if(page==="erp")productPage("Deepen ERP");else if(page==="well")productPage("Deepen Well");else if(page==="team")team();else if(page==="risks")risks();else if(page==="history")history();else tasks()}
-function show(p){page=p;render()}
-function setLang(l){lang=l;try{window.localStorage.setItem("dph-lang",l)}catch(e){}render()}
-function bootError(e){
-  window.__DPMH_BOOT_ERROR__=String(e&&e.stack||e);
-  try{document.getElementById("app").innerHTML='<div class="card"><h2>Dashboard error</h2><div class="risk"><b>JavaScript error</b><div class="muted">'+esc(window.__DPMH_BOOT_ERROR__)+'</div></div><div class="mini">The page shell is working. Refresh the page after deployment.</div></div>'}catch(x){}
+
+function t(k){return (T[lang]&&T[lang][k])||T.en[k]||k;}
+function esc(v){return String(v==null?'':v).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+function isClosed(x){return ['closed','done'].indexOf(String(x.status_type||'').toLowerCase())>=0||/^(complete|completed|done|closed)$/i.test(x.status||'');}
+function product(x){var s=((x.list_name||'')+' '+(x.folder_name||'')+' '+(x.space_name||'')).toLowerCase();if(/erp|white.?label|whitelabel/.test(s))return 'Deepen ERP';if(/deepen|well|ai trainer|deepview|activity|challenge/.test(s))return 'Deepen Well';return 'Other';}
+function all(){return Array.isArray(D.tasks)?D.tasks:[];}
+function active(){return all().filter(function(x){return !isClosed(x);});}
+function card(label,num,sub){return '<div class="card"><div class="muted">'+label+'</div><div class="kpi">'+num+'</div><div class="mini">'+(sub||'')+'</div></div>';}
+function statusCounts(xs){var m={};xs.forEach(function(x){var s=x.status||'Unknown';m[s]=(m[s]||0)+1;});return Object.keys(m).map(function(k){return [k,m[k]];}).sort(function(a,b){return b[1]-a[1];});}
+function bars(xs){var z=statusCounts(xs),total=xs.length||1;if(!z.length)return '<div class="empty">'+t('no')+'</div>';return z.slice(0,12).map(function(a){return '<div class="row"><span>'+esc(a[0])+'</span><b>'+a[1]+'</b></div><div class="bar"><i style="width:'+((a[1]/total)*100)+'%"></i></div>';}).join('');}
+function sprintLists(){return (D.lists||[]).filter(function(l){return /sprint\s*\d+/i.test(l.name||'');}).sort(function(a,b){return String(b.name).localeCompare(String(a.name),undefined,{numeric:true});});}
+
+function renderNav(){
+  var items=[['overview','◉ '+t('overview')],['erp','▣ '+t('erp')],['well','◈ '+t('well')],['team','♙ '+t('team')],['risks','⚠ '+t('risks')],['history','◷ '+t('history')],['tasks','☷ '+t('tasks')]];
+  document.getElementById('nav').innerHTML=items.map(function(item){return '<button type="button" data-page="'+item[0]+'" class="'+(page===item[0]?'active':'')+'">'+item[1]+'</button>';}).join('');
 }
-window.addEventListener("error",e=>{if(e&&e.error)bootError(e.error)});
-window.addEventListener("unhandledrejection",e=>bootError(e&&e.reason||e));
-async function load(){
-  try{render()}catch(e){bootError(e)}
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),10000);
-  try{
-    const r=await fetch("./data.json?ts="+Date.now(),{cache:"no-store",signal:controller.signal});
-    if(!r.ok) throw new Error("data.json HTTP "+r.status);
-    D=await r.json();
-  }catch(e){
-    D.errors=[String(e)];
-  }finally{
-    clearTimeout(timer);
-    try{render()}catch(e){bootError(e)}
-  }
+function renderTop(){
+  document.getElementById('title').textContent=t('title');
+  document.getElementById('subtitle').textContent=t('sub');
+  document.getElementById('method').textContent=t('method');
+  document.getElementById('source').textContent=t('last')+': '+(D.generated_at?new Date(D.generated_at).toLocaleString():'—');
+  document.getElementById('badge').innerHTML='<span class="pill '+(D.source==='clickup'?'live':'demo')+'">'+(D.source==='clickup'?t('live'):t('demo'))+'</span>';
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===lang);});
 }
-load();
-</script></body></html>
+function table(xs){
+  return '<div class="tablewrap"><table><tr><th>'+t('task')+'</th><th>'+t('status')+'</th><th>'+t('assignee')+'</th><th>'+t('product')+'</th><th>'+t('list')+'</th><th>'+t('updated')+'</th><th>'+t('due')+'</th></tr>'+
+  xs.map(function(x){
+    var cls=isClosed(x)?'done':x.overdue?'bad':(x.age_days||0)>=7?'stwarn':'';
+    var name=x.url?'<a class="link" target="_blank" rel="noopener" href="'+esc(x.url)+'">'+esc(x.name)+'</a>':esc(x.name);
+    var ass=(x.assignees||[]).map(function(a){return a.name||a.username;}).join(', ')||'—';
+    return '<tr><td>'+name+'</td><td><span class="status '+cls+'">'+esc(x.status)+'</span></td><td>'+esc(ass)+'</td><td>'+product(x)+'</td><td>'+esc(x.list_name)+'</td><td>'+(x.date_updated?new Date(Number(x.date_updated)).toLocaleDateString():'—')+'</td><td>'+(x.due_date?new Date(Number(x.due_date)).toLocaleDateString():'—')+'</td></tr>';
+  }).join('')+'</table></div>';
+}
+function overview(){
+  var a=active(),done=all().filter(isClosed),over=a.filter(function(x){return x.overdue;}),stale=a.filter(function(x){return (x.age_days||0)>=7;}),back=a.filter(function(x){return /backlog|to do/i.test(x.status||'');});
+  document.getElementById('app').innerHTML='<div class="grid">'+card(t('primary'),all().length,t('allTasks'))+card(t('active'),a.length)+card(t('done'),done.length)+card(t('overdue'),over.length)+'</div>'+
+  '<div class="grid">'+card(t('stale'),stale.length)+card(t('backlog'),back.length)+card(t('inprogress'),a.filter(function(x){return /progress|review|qa|design|release/i.test(x.status||'');}).length)+card(t('alerts'),over.length+stale.length)+'</div>'+
+  '<div class="grid grid2"><div class="card"><h2>'+t('current')+'</h2>'+sprintLists().slice(0,8).map(function(l){var n=all().filter(function(x){return String(x.list_id)===String(l.id);}).length;return '<div class="row"><span>'+esc(l.name)+'</span><b>'+n+'</b></div>';}).join('')+'</div><div class="card"><h2>'+t('distribution')+'</h2>'+bars(a)+'</div></div>'+
+  '<div class="grid grid2"><div class="card"><h2>'+t('risks')+'</h2>'+over.slice(0,5).map(function(x){return '<div class="risk"><b>'+esc(x.name)+'</b><div class="muted">'+t('overdueMsg')+'</div></div>';}).join('')+stale.slice(0,5).map(function(x){return '<div class="warn"><b>'+esc(x.name)+'</b><div class="muted">'+t('staleMsg')+'</div></div>';}).join('')+((!over.length&&!stale.length)?'<div class="good">No critical automatic alerts.</div>':'')+'</div><div class="card"><h2>'+t('actions')+'</h2><div class="good">1. '+t('review')+': '+over.length+'</div><div class="warn">2. '+t('review')+': '+stale.length+'</div></div></div>';
+}
+function productPage(p){var xs=all().filter(function(x){return product(x)===p;}),a=xs.filter(function(x){return !isClosed(x);});document.getElementById('app').innerHTML='<div class="grid">'+card(t('primary'),xs.length)+card(t('active'),a.length)+card(t('done'),xs.length-a.length)+card(t('overdue'),a.filter(function(x){return x.overdue;}).length)+'</div><div class="grid grid2"><div class="card"><h2>'+t('distribution')+'</h2>'+bars(a)+'</div><div class="card"><h2>'+t('list')+'</h2>'+statusCounts(a).map(function(a){return '<div class="row"><span>'+esc(a[0])+'</span><b>'+a[1]+'</b></div>';}).join('')+'</div></div><div class="card"><h2>'+t('allTasks')+'</h2>'+table(xs.slice(0,500))+'</div>';}
+function team(){var m={};active().forEach(function(x){(x.assignees||[]).forEach(function(a){var n=a.name||a.username||'Unassigned';m[n]=(m[n]||0)+1;});});var rows=Object.keys(m).sort(function(a,b){return m[b]-m[a];});document.getElementById('app').innerHTML='<div class="card"><h2>'+t('workload')+'</h2><div class="mini">Workload is not a performance score.</div><div class="tablewrap"><table><tr><th>'+t('assignee')+'</th><th>'+t('active')+'</th><th>'+t('overdue')+'</th></tr>'+rows.map(function(n){var q=active().filter(function(x){return (x.assignees||[]).some(function(a){return (a.name||a.username)===n;})&&x.overdue;}).length;return '<tr><td>'+esc(n)+'</td><td>'+m[n]+'</td><td>'+q+'</td></tr>';}).join('')+'</table></div></div>';}
+function risks(){var a=active(),over=a.filter(function(x){return x.overdue;}),stale=a.filter(function(x){return (x.age_days||0)>=7;});document.getElementById('app').innerHTML='<div class="grid">'+card(t('overdue'),over.length)+card(t('stale'),stale.length)+card(t('backlog'),a.filter(function(x){return /backlog/i.test(x.status||'');}).length)+card(t('inprogress'),a.filter(function(x){return /progress|review|qa|design|release/i.test(x.status||'');}).length)+'</div><div class="card"><h2>'+t('risks')+'</h2>'+over.map(function(x){return '<div class="risk"><b>'+esc(x.name)+'</b><div class="muted">'+esc(x.list_name)+' · '+t('overdueMsg')+'</div></div>';}).join('')+stale.map(function(x){return '<div class="warn"><b>'+esc(x.name)+'</b><div class="muted">'+esc(x.list_name)+' · '+t('staleMsg')+'</div></div>';}).join('')+((!over.length&&!stale.length)?'<div class="good">No automatic risk alerts.</div>':'')+'</div>';}
+function history(){var rows=sprintLists();document.getElementById('app').innerHTML='<div class="card"><h2>'+t('sprintHistory')+'</h2>'+table(rows.map(function(l){return {name:l.name,status:'Sprint',assignees:[],list_name:'',list_id:l.id,date_updated:null,due_date:null};}))+'</div>';}
+function tasks(){
+  var xs=all();
+  document.getElementById('app').innerHTML='<div class="card"><h2>'+t('allTasks')+'</h2><div class="toolbar"><input id="search" placeholder="'+t('search')+'"><select id="pf"><option value="">'+t('all')+'</option><option>Deepen ERP</option><option>Deepen Well</option><option>Other</option></select><select id="sf"><option value="">'+t('all')+'</option>'+Array.from(new Set(xs.map(function(x){return x.status;}))).sort().map(function(s){return '<option>'+esc(s)+'</option>';}).join('')+'</select></div><div id="tasktable">'+table(xs.slice(0,1000))+'</div><div class="mini">'+xs.length+' primary tasks loaded.</div></div>';
+  document.getElementById('search').addEventListener('input',filterTasks);
+  document.getElementById('pf').addEventListener('change',filterTasks);
+  document.getElementById('sf').addEventListener('change',filterTasks);
+}
+function filterTasks(){var q=(document.getElementById('search').value||'').toLowerCase(),p=document.getElementById('pf').value,s=document.getElementById('sf').value;var xs=all().filter(function(x){return (!q||JSON.stringify(x).toLowerCase().indexOf(q)>=0)&&(!p||product(x)===p)&&(!s||x.status===s);});document.getElementById('tasktable').innerHTML=table(xs.slice(0,1000));}
+function render(){renderNav();renderTop();if(page==='overview')overview();else if(page==='erp')productPage('Deepen ERP');else if(page==='well')productPage('Deepen Well');else if(page==='team')team();else if(page==='risks')risks();else if(page==='history')history();else tasks();}
+function show(p){page=p;render();}
+function setLang(l){lang=l;try{localStorage.setItem('dph-lang',l);}catch(e){}render();}
+
+document.addEventListener('click',function(e){var b=e.target.closest('[data-page]');if(b){show(b.getAttribute('data-page'));return;}var lb=e.target.closest('[data-lang]');if(lb){setLang(lb.getAttribute('data-lang'));}});
+window.addEventListener('error',function(e){var app=document.getElementById('app');if(app&&e.error){app.innerHTML='<div class="card"><h2>Dashboard error</h2><div class="risk"><b>JavaScript error</b><div class="muted">'+esc(e.error.message||e.error)+'</div></div></div>';}});
+render();
+
+fetch('./data.json?ts='+Date.now(),{cache:'no-store'})
+.then(function(r){if(!r.ok)throw new Error('data.json HTTP '+r.status);return r.json();})
+.then(function(data){D=data;render();})
+.catch(function(err){D.errors=[String(err)];render();});
+
+})();
+</script>
+</body>
+</html>
