@@ -7,7 +7,9 @@
 <body><aside><div class="brand">Deepen <span>PM Hub</span></div><nav id="nav"></nav><div class="bottom"><div class="mini" id="source">Loading...</div><div class="langs"><button onclick="setLang('uz')">UZ</button><button onclick="setLang('ru')">RU</button><button onclick="setLang('en')">EN</button></div></div></aside>
 <main><div class="top"><div class="title"><h1 id="title"></h1><div class="muted" id="subtitle"></div></div><div id="badge"></div></div><div id="app"></div><div class="footer" id="method"></div></main>
 <script>
-let D={generated_at:null,source:"demo",tasks:[],lists:[],errors:[]}, page="overview", lang=localStorage.getItem("dph-lang")||"uz";
+let D={generated_at:null,source:"demo",tasks:[],lists:[],errors:[]}, page="overview", lang="uz";
+try{lang=window.localStorage.getItem("dph-lang")||"uz"}catch(e){lang="uz"}
+window.__DPMH_BOOT_ERROR__=null;
 const T={
 uz:{overview:"Umumiy holat",erp:"Deepen ERP",well:"Deepen Well",team:"Jamoa",risks:"Risklar va bottlenecklar",history:"Sprint tarixi",tasks:"Task Explorer",title:"PM Dashboard",sub:"Deepen ERP va Deepen Well uchun boshqaruv markazi",primary:"Primary Tasks",active:"Faol",done:"Bajarilgan",overdue:"Muddati o'tgan",stale:"7+ kun yangilanmagan",backlog:"Backlog",inprogress:"Jarayonda",alerts:"Avtomatik kuzatuv",status:"Status",task:"Task",assignee:"Ijrochi",product:"Product",list:"List",updated:"Yangilangan",due:"Deadline",search:"Qidirish...",all:"Barchasi",potential:"Potential bottleneck",signal:"Queue signali. Faqat task soni bottleneck ekanini isbotlamaydi.",method:"Metodologiya: Sprint KPI faqat Primary/Parent Tasks hisobida. Subtasklar alohida hisoblanmaydi.",live:"LIVE · ClickUp",demo:"DEMO · ClickUp token kerak",last:"Oxirgi sync",no:"Ma'lumot topilmadi",actions:"PM Actions",review:"Ko'rib chiqish",current:"Joriy sprintlar",distribution:"Status taqsimoti",workload:"Workload",sprintHistory:"Sprint History",source:"Manba",allTasks:"Barcha Primary Tasks",staleMsg:"Task 7 kundan ortiq yangilanmagan.",overdueMsg:"Deadline o'tgan ochiq task.",filter:"Filter",clear:"Tozalash",open:"Ochish"},
 ru:{overview:"Общий обзор",erp:"Deepen ERP",well:"Deepen Well",team:"Команда",risks:"Риски и bottleneck",history:"История спринтов",tasks:"Task Explorer",title:"PM Dashboard",sub:"Центр управления Deepen ERP и Deepen Well",primary:"Primary Tasks",active:"Активные",done:"Выполнено",overdue:"Просрочено",stale:"Не обновлялись 7+ дней",backlog:"Backlog",inprogress:"В работе",alerts:"Автоматический контроль",status:"Статус",task:"Задача",assignee:"Исполнитель",product:"Product",list:"List",updated:"Обновлено",due:"Deadline",search:"Поиск...",all:"Все",potential:"Potential bottleneck",signal:"Сигнал очереди. Само количество задач не доказывает bottleneck.",method:"Методология: KPI спринта считает только Primary/Parent Tasks. Subtasks отдельно не считаются.",live:"LIVE · ClickUp",demo:"DEMO · нужен ClickUp token",last:"Последняя синхронизация",no:"Данные не найдены",actions:"Действия PM",review:"Проверить",current:"Текущие спринты",distribution:"Распределение по статусам",workload:"Workload",sprintHistory:"Sprint History",source:"Источник",allTasks:"Все Primary Tasks",staleMsg:"Задача не обновлялась более 7 дней.",overdueMsg:"Открытая задача с истёкшим deadline.",filter:"Фильтр",clear:"Очистить",open:"Открыть"},
@@ -35,9 +37,15 @@ function tasks(){let xs=all();document.getElementById("app").innerHTML=`<div cla
 function filterTasks(){let q=(document.getElementById("search").value||"").toLowerCase(),p=document.getElementById("pf").value,s=document.getElementById("sf").value;let xs=all().filter(x=>(!q||JSON.stringify(x).toLowerCase().includes(q))&&(!p||product(x)===p)&&(!s||x.status===s));document.getElementById("tasktable").innerHTML=table(xs.slice(0,1000))}
 function render(){nav();top();if(page==="overview")overview();else if(page==="erp")productPage("Deepen ERP");else if(page==="well")productPage("Deepen Well");else if(page==="team")team();else if(page==="risks")risks();else if(page==="history")history();else tasks()}
 function show(p){page=p;render()}
-function setLang(l){lang=l;localStorage.setItem("dph-lang",l);render()}
+function setLang(l){lang=l;try{window.localStorage.setItem("dph-lang",l)}catch(e){}render()}
+function bootError(e){
+  window.__DPMH_BOOT_ERROR__=String(e&&e.stack||e);
+  try{document.getElementById("app").innerHTML='<div class="card"><h2>Dashboard error</h2><div class="risk"><b>JavaScript error</b><div class="muted">'+esc(window.__DPMH_BOOT_ERROR__)+'</div></div><div class="mini">The page shell is working. Refresh the page after deployment.</div></div>'}catch(x){}
+}
+window.addEventListener("error",e=>{if(e&&e.error)bootError(e.error)});
+window.addEventListener("unhandledrejection",e=>bootError(e&&e.reason||e));
 async function load(){
-  render();
+  try{render()}catch(e){bootError(e)}
   const controller=new AbortController();
   const timer=setTimeout(()=>controller.abort(),10000);
   try{
@@ -48,7 +56,7 @@ async function load(){
     D.errors=[String(e)];
   }finally{
     clearTimeout(timer);
-    render();
+    try{render()}catch(e){bootError(e)}
   }
 }
 load();
