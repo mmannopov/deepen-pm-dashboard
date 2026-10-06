@@ -55,9 +55,9 @@ var lang='uz';
 try{lang=localStorage.getItem('dph-lang')||'uz';}catch(e){lang='uz';}
 
 var T={
-uz:{overview:'Umumiy holat',erp:'Deepen ERP',well:'Deepen Well',team:'Jamoa',risks:'Risklar va bottlenecklar',history:'Sprint tarixi',tasks:'Task Explorer',title:'PM Dashboard',sub:'Deepen ERP va Deepen Well uchun boshqaruv markazi',primary:'Primary Tasks',active:'Faol',done:'Bajarilgan',overdue:"Muddati o'tgan",stale:'7+ kun yangilanmagan',backlog:'Backlog',inprogress:'Jarayonda',alerts:'Avtomatik kuzatuv',status:'Status',task:'Task',assignee:'Ijrochi',product:'Product',list:'List',updated:'Yangilangan',due:'Deadline',search:'Qidirish...',all:'Barchasi',potential:'Potential bottleneck',signal:'Queue signali. Task soni yolg‘iz bottleneckni isbotlamaydi.',method:'Metodologiya: Sprint KPI faqat Primary/Parent Tasks hisobida. Subtasklar alohida hisoblanmaydi.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token kerak',last:'Oxirgi sync',no:'Ma’lumot topilmadi',actions:'PM Actions',review:'Ko‘rib chiqish',current:'Joriy sprintlar',distribution:'Status taqsimoti',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Barcha Primary Tasks',staleMsg:'Task 7 kundan ortiq yangilanmagan.',overdueMsg:"Deadline o'tgan ochiq task."},
-ru:{overview:'Общий обзор',erp:'Deepen ERP',well:'Deepen Well',team:'Команда',risks:'Риски и bottleneck',history:'История спринтов',tasks:'Task Explorer',title:'PM Dashboard',sub:'Центр управления Deepen ERP и Deepen Well',primary:'Primary Tasks',active:'Активные',done:'Выполнено',overdue:'Просрочено',stale:'Не обновлялись 7+ дней',backlog:'Backlog',inprogress:'В работе',alerts:'Автоматический контроль',status:'Статус',task:'Задача',assignee:'Исполнитель',product:'Product',list:'List',updated:'Обновлено',due:'Deadline',search:'Поиск...',all:'Все',potential:'Potential bottleneck',signal:'Сигнал очереди. Само количество задач не доказывает bottleneck.',method:'Методология: KPI спринта считает только Primary/Parent Tasks. Subtasks отдельно не считаются.',live:'LIVE · ClickUp',demo:'DEMO · нужен ClickUp token',last:'Последняя синхронизация',no:'Данные не найдены',actions:'Действия PM',review:'Проверить',current:'Текущие спринты',distribution:'Распределение по статусам',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Все Primary Tasks',staleMsg:'Задача не обновлялась более 7 дней.',overdueMsg:'Открытая задача с истёкшим deadline.'},
-en:{overview:'Overview',erp:'Deepen ERP',well:'Deepen Well',team:'Team',risks:'Risks & Bottlenecks',history:'Sprint History',tasks:'Task Explorer',title:'PM Dashboard',sub:'Control center for Deepen ERP and Deepen Well',primary:'Primary Tasks',active:'Active',done:'Completed',overdue:'Overdue',stale:'Not updated for 7+ days',backlog:'Backlog',inprogress:'In Progress',alerts:'Automated monitoring',status:'Status',task:'Task',assignee:'Assignee',product:'Product',list:'List',updated:'Updated',due:'Deadline',search:'Search...',all:'All',potential:'Potential bottleneck',signal:'Queue signal. Task count alone does not prove a bottleneck.',method:'Methodology: Sprint KPI counts Primary/Parent Tasks only. Subtasks are not counted separately.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token required',last:'Last sync',no:'No data found',actions:'PM Actions',review:'Review',current:'Current sprints',distribution:'Status distribution',workload:'Workload',sprintHistory:'Sprint History',allTasks:'All Primary Tasks',staleMsg:'Task has not been updated for more than 7 days.',overdueMsg:'Open task past deadline.'}
+uz:{overview:'Umumiy holat',erp:'Deepen ERP',well:'Deepen Well',team:'Jamoa',risks:'Risklar va bottlenecklar',history:'Sprint tarixi',tasks:'Task Explorer',report:'PM Report',title:'PM Dashboard',sub:'Deepen ERP va Deepen Well uchun boshqaruv markazi',primary:'Primary Tasks',active:'Faol',done:'Bajarilgan',overdue:"Muddati o'tgan",stale:'7+ kun yangilanmagan',backlog:'Backlog',inprogress:'Jarayonda',alerts:'Avtomatik kuzatuv',status:'Status',task:'Task',assignee:'Ijrochi',product:'Product',list:'List',updated:'Yangilangan',due:'Deadline',search:'Qidirish...',all:'Barchasi',potential:'Potential bottleneck',signal:'Queue signali. Task soni yolg‘iz bottleneckni isbotlamaydi.',method:'Metodologiya: Sprint KPI faqat Primary/Parent Tasks hisobida. Subtasklar alohida hisoblanmaydi.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token kerak',last:'Oxirgi sync',no:'Ma’lumot topilmadi',actions:'PM Actions',review:'Ko‘rib chiqish',current:'Joriy sprintlar',distribution:'Status taqsimoti',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Barcha Primary Tasks',staleMsg:'Task 7 kundan ortiq yangilanmagan.',overdueMsg:"Deadline o'tgan ochiq task."},
+ru:{overview:'Общий обзор',erp:'Deepen ERP',well:'Deepen Well',team:'Команда',risks:'Риски и bottleneck',history:'История спринтов',tasks:'Task Explorer',report:'PM Report',title:'PM Dashboard',sub:'Центр управления Deepen ERP и Deepen Well',primary:'Primary Tasks',active:'Активные',done:'Выполнено',overdue:'Просрочено',stale:'Не обновлялись 7+ дней',backlog:'Backlog',inprogress:'В работе',alerts:'Автоматический контроль',status:'Статус',task:'Задача',assignee:'Исполнитель',product:'Product',list:'List',updated:'Обновлено',due:'Deadline',search:'Поиск...',all:'Все',potential:'Potential bottleneck',signal:'Сигнал очереди. Само количество задач не доказывает bottleneck.',method:'Методология: KPI спринта считает только Primary/Parent Tasks. Subtasks отдельно не считаются.',live:'LIVE · ClickUp',demo:'DEMO · нужен ClickUp token',last:'Последняя синхронизация',no:'Данные не найдены',actions:'Действия PM',review:'Проверить',current:'Текущие спринты',distribution:'Распределение по статусам',workload:'Workload',sprintHistory:'Sprint History',allTasks:'Все Primary Tasks',staleMsg:'Задача не обновлялась более 7 дней.',overdueMsg:'Открытая задача с истёкшим deadline.'},
+en:{overview:'Overview',erp:'Deepen ERP',well:'Deepen Well',team:'Team',risks:'Risks & Bottlenecks',history:'Sprint History',tasks:'Task Explorer',report:'PM Report',title:'PM Dashboard',sub:'Control center for Deepen ERP and Deepen Well',primary:'Primary Tasks',active:'Active',done:'Completed',overdue:'Overdue',stale:'Not updated for 7+ days',backlog:'Backlog',inprogress:'In Progress',alerts:'Automated monitoring',status:'Status',task:'Task',assignee:'Assignee',product:'Product',list:'List',updated:'Updated',due:'Deadline',search:'Search...',all:'All',potential:'Potential bottleneck',signal:'Queue signal. Task count alone does not prove a bottleneck.',method:'Methodology: Sprint KPI counts Primary/Parent Tasks only. Subtasks are not counted separately.',live:'LIVE · ClickUp',demo:'DEMO · ClickUp token required',last:'Last sync',no:'No data found',actions:'PM Actions',review:'Review',current:'Current sprints',distribution:'Status distribution',workload:'Workload',sprintHistory:'Sprint History',allTasks:'All Primary Tasks',staleMsg:'Task has not been updated for more than 7 days.',overdueMsg:'Open task past deadline.'}
 };
 
 function t(k){return (T[lang]&&T[lang][k])||T.en[k]||k;}
@@ -72,7 +72,7 @@ function bars(xs){var z=statusCounts(xs),total=xs.length||1;if(!z.length)return 
 function sprintLists(){return (D.lists||[]).filter(function(l){return /sprint\s*\d+/i.test(l.name||'');}).sort(function(a,b){return String(b.name).localeCompare(String(a.name),undefined,{numeric:true});});}
 
 function renderNav(){
-  var items=[['overview','◉ '+t('overview')],['erp','▣ '+t('erp')],['well','◈ '+t('well')],['team','♙ '+t('team')],['risks','⚠ '+t('risks')],['history','◷ '+t('history')],['tasks','☷ '+t('tasks')]];
+  var items=[['overview','◉ '+t('overview')],['erp','▣ '+t('erp')],['well','◈ '+t('well')],['team','♙ '+t('team')],['risks','⚠ '+t('risks')],['history','◷ '+t('history')],['tasks','☷ '+t('tasks')],['report','▤ '+t('report')]];
   document.getElementById('nav').innerHTML=items.map(function(item){return '<button type="button" data-page="'+item[0]+'" class="'+(page===item[0]?'active':'')+'">'+item[1]+'</button>';}).join('');
 }
 function renderTop(){
@@ -111,7 +111,62 @@ function tasks(){
   document.getElementById('sf').addEventListener('change',filterTasks);
 }
 function filterTasks(){var q=(document.getElementById('search').value||'').toLowerCase(),p=document.getElementById('pf').value,s=document.getElementById('sf').value;var xs=all().filter(function(x){return (!q||JSON.stringify(x).toLowerCase().indexOf(q)>=0)&&(!p||product(x)===p)&&(!s||x.status===s);});document.getElementById('tasktable').innerHTML=table(xs.slice(0,1000));}
-function render(){renderNav();renderTop();if(page==='overview')overview();else if(page==='erp')productPage('Deepen ERP');else if(page==='well')productPage('Deepen Well');else if(page==='team')team();else if(page==='risks')risks();else if(page==='history')history();else tasks();}
+
+function reportMarkdown(){
+  var xs=all(), a=active(), done=xs.filter(isClosed), over=a.filter(function(x){return x.overdue;}), stale=a.filter(function(x){return (x.age_days||0)>=7;});
+  var backlog=a.filter(function(x){return /backlog|to do/i.test(x.status||'');});
+  var flow=a.filter(function(x){return /progress|review|qa|design|release/i.test(x.status||'');});
+  var products=['Deepen ERP','Deepen Well'].map(function(p){
+    var q=xs.filter(function(x){return product(x)===p;}),qa=q.filter(function(x){return !isClosed(x);});
+    return {name:p,total:q.length,active:qa.length,done:q.length-qa.length,overdue:qa.filter(function(x){return x.overdue;}).length};
+  });
+  var sprints=sprintLists().slice(0,10).map(function(l){
+    var q=xs.filter(function(x){return String(x.list_id)===String(l.id);}),qa=q.filter(function(x){return !isClosed(x);});
+    return {name:l.name,total:q.length,done:q.length-qa.length,active:qa.length,overdue:qa.filter(function(x){return x.overdue;}).length};
+  });
+  var tm={};
+  a.forEach(function(x){(x.assignees||[]).forEach(function(u){var n=u.name||u.username||'Unassigned';if(!tm[n])tm[n]={active:0,overdue:0};tm[n].active++;if(x.overdue)tm[n].overdue++;});});
+  var team=Object.keys(tm).sort(function(x,y){return tm[y].active-tm[x].active;}).map(function(n){return '- '+n+': '+tm[n].active+' active, '+tm[n].overdue+' overdue';});
+  var riskRows=over.slice(0,12).map(function(x){return '- **OVERDUE:** '+x.name+' — '+(x.list_name||'Unknown list');})
+    .concat(stale.slice(0,12).map(function(x){return '- **STALE 7+ DAYS:** '+x.name+' — '+(x.list_name||'Unknown list');}));
+  var actions=[];
+  if(over.length)actions.push('Resolve or re-plan '+over.length+' overdue open task(s).');
+  if(stale.length)actions.push('Review '+stale.length+' stale task(s) with no update for 7+ days.');
+  if(backlog.length)actions.push('Review backlog / To Do queue: '+backlog.length+' active task(s).');
+  if(flow.length)actions.push('Review delivery flow queue: '+flow.length+' task(s) in progress/review/QA/design/release.');
+  if(!actions.length)actions.push('No automatic critical actions detected from current ClickUp data.');
+  return '# Deepen PM Report\n\n'
+    +'**Generated:** '+(D.generated_at?new Date(D.generated_at).toLocaleString():'—')+'\n\n'
+    +'## 1. Executive Summary\n\n'
+    +'- Primary tasks: **'+xs.length+'**\n'
+    +'- Active: **'+a.length+'**\n'
+    +'- Completed: **'+done.length+'**\n'
+    +'- Overdue: **'+over.length+'**\n'
+    +'- Stale 7+ days: **'+stale.length+'**\n'
+    +'- Backlog / To Do: **'+backlog.length+'**\n'
+    +'- Delivery flow (progress/review/QA/design/release): **'+flow.length+'**\n\n'
+    +'## 2. Product Summary\n\n| Product | Total | Active | Completed | Overdue |\n|---|---:|---:|---:|---:|\n'
+    +products.map(function(p){return '| '+p.name+' | '+p.total+' | '+p.active+' | '+p.done+' | '+p.overdue+' |';}).join('\n')
+    +'\n\n## 3. Sprint Snapshot\n\n| Sprint/List | Total | Active | Completed | Overdue |\n|---|---:|---:|---:|---:|\n'
+    +(sprints.length?sprints.map(function(p){return '| '+p.name+' | '+p.total+' | '+p.active+' | '+p.done+' | '+p.overdue+' |';}).join('\n'):'| No sprint lists detected | 0 | 0 | 0 | 0 |')
+    +'\n\n## 4. Team Workload\n\n'+(team.length?team.join('\n'):'- No active assignees found.')
+    +'\n\n## 5. Risks & Bottlenecks\n\n'+(riskRows.length?riskRows.join('\n'):'- No automatic overdue/stale risk signals.')
+    +'\n\n## 6. PM Actions\n\n'+actions.map(function(x,i){return (i+1)+'. '+x;}).join('\n')
+    +'\n\n## Methodology\n\n'
+    +'- Report is generated from the latest data.json synchronized from ClickUp.\n'
+    +'- KPI counts use Primary/Parent Tasks only; subtasks are not counted separately.\n'
+    +'- "Bottleneck" is not asserted from task count alone; queue signals require PM review.\n';
+}
+function reportPage(){
+  var md=reportMarkdown();
+  document.getElementById('app').innerHTML='<div class="card"><div class="top"><div><h2>'+t('report')+'</h2><div class="muted">Auto-generated from current ClickUp data</div></div><div><button id="downloadReport" type="button" style="background:#14243a;color:#fff;border:1px solid #314765;border-radius:8px;padding:9px 12px;cursor:pointer">Download .md</button></div></div><div style="margin-top:16px;white-space:pre-wrap;line-height:1.55;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#091322;border:1px solid #1d2d45;border-radius:10px;padding:16px;max-height:720px;overflow:auto">'+esc(md)+'</div></div>';
+  document.getElementById('downloadReport').addEventListener('click',function(){
+    var blob=new Blob([md],{type:'text/markdown;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=u;a.download='deepen-pm-report-'+new Date().toISOString().slice(0,10)+'.md';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);
+  });
+}
+
+function render(){renderNav();renderTop();if(page==='overview')overview();else if(page==='erp')productPage('Deepen ERP');else if(page==='well')productPage('Deepen Well');else if(page==='team')team();else if(page==='risks')risks();else if(page==='history')history();else if(page==='report')reportPage();else tasks();}
 function show(p){page=p;render();}
 function setLang(l){lang=l;try{localStorage.setItem('dph-lang',l);}catch(e){}render();}
 
