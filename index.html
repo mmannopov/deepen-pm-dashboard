@@ -36,6 +36,20 @@ function filterTasks(){let q=(document.getElementById("search").value||"").toLow
 function render(){nav();top();if(page==="overview")overview();else if(page==="erp")productPage("Deepen ERP");else if(page==="well")productPage("Deepen Well");else if(page==="team")team();else if(page==="risks")risks();else if(page==="history")history();else tasks()}
 function show(p){page=p;render()}
 function setLang(l){lang=l;localStorage.setItem("dph-lang",l);render()}
-async function load(){try{const r=await fetch("data.json?ts="+Date.now(),{cache:"no-store"});if(r.ok)D=await r.json()}catch(e){D.errors=[String(e)]}render()}
+async function load(){
+  render();
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),10000);
+  try{
+    const r=await fetch("./data.json?ts="+Date.now(),{cache:"no-store",signal:controller.signal});
+    if(!r.ok) throw new Error("data.json HTTP "+r.status);
+    D=await r.json();
+  }catch(e){
+    D.errors=[String(e)];
+  }finally{
+    clearTimeout(timer);
+    render();
+  }
+}
 load();
 </script></body></html>
